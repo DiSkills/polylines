@@ -1,8 +1,7 @@
-const maps = require('./node_modules/@googlemaps/polyline-codec');
+const codec = require('@googlemaps/polyline-codec');
 
 const fs = require('fs');
 const bytes = fs.readFileSync(__dirname + '/polyline.wasm');
-// const size = parseInt(process.argv[2]);
 
 let memory = new WebAssembly.Memory({initial: 10000});
 let importObj = {
@@ -32,7 +31,7 @@ function decodeWasm(obj, str) {
 
     console.log("n(points) wasm js");
 
-[100, 1000, 10000, 50000, 100000, 500000, 1000000, 5000000].forEach((size) => {
+[100, 10, 1000, 10000, 50000, 100000, 500000, 1000000, 5000000].forEach((size) => {
 
     let coords = [];
     for (let i = 0; i < size; i++) {
@@ -40,17 +39,18 @@ function decodeWasm(obj, str) {
         let lng = (Math.floor(Math.random() * 36000) - 18000) / 100;
         coords.push([lat, lng])
     }
-    let str = maps.encode(coords, 5);
+    let str = codec.encode(coords, 5);
 
     let swasm = performance.now();
     const path = decodeWasm(obj, str);
     let ewasm = performance.now();
 
     let sjs = performance.now();
-    const pathJS = maps.decode(str);
+    const pathJS = codec.decode(str);
     let ejs = performance.now();
 
     console.log(size, ewasm - swasm, ejs - sjs);
+    console.log(path[0], pathJS[0], path[path.length - 1], pathJS[pathJS.length - 1]);
 
 })
 })();
