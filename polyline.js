@@ -6,15 +6,15 @@ const bytes = fs.readFileSync(__dirname + '/polyline.wasm');
 let memory = new WebAssembly.Memory({initial: 10000});
 let importObj = {
     env: {
-        buffer: memory
+        memory
     }
 };
-let encoder = new TextEncoder('utf-8');
+let encoder = new TextEncoder();
 
 function decodeWasm(obj, str) {
     let line = encoder.encode(str);
     let encoded = new Uint8Array(memory.buffer, 0, line.length);
-    encoded.set(line, 0);
+    encoded.set(line);
 
     let [res, len] = obj.instance.exports.decode(0, line.length, 100000);
 
@@ -29,9 +29,8 @@ function decodeWasm(obj, str) {
 (async () => {
     let obj = await WebAssembly.instantiate(new Uint8Array(bytes), importObj);
 
-    console.log("n(points) wasm js");
-
-[100, 10, 1000, 10000, 50000, 100000, 500000, 1000000, 5000000].forEach((size) => {
+    let result = [];
+[10000, 50000, 100000, 500000, 1000000].forEach((size) => {
 
     let coords = [];
     for (let i = 0; i < size; i++) {
@@ -49,8 +48,16 @@ function decodeWasm(obj, str) {
     const pathJS = codec.decode(str);
     let ejs = performance.now();
 
-    console.log(size, ewasm - swasm, ejs - sjs);
-    console.log(path[0], pathJS[0], path[path.length - 1], pathJS[pathJS.length - 1]);
+    for (let i = 0; i < size; i++) {
+	if ((path[i][0] !== pathJS[i][0]) || (path[i][1] !== pathJS[i][1])) {
+	    console.log(i);
+	    console.log(path);
+	    console.log(pathJS);
+	    process.exit(1);
+        }
+    }
+    result.push({nPoints: size, wasm: ewasm - swasm, js: ejs - sjs});
 
 })
+    console.table(result);
 })();
