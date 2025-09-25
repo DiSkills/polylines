@@ -32,30 +32,38 @@ function decodeWasm(obj, str) {
     const n = 100;
 
     console.log("n(points) wasm js");
-[10, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 2000, 3000, 5000, 10000, 50000, 100000, 500000].forEach((size) => {
-    let wsum = 0, jsum = 0;
+    [10, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 2000, 3000, 5000, 10000, 50000, 100000, 500000].forEach((size) => {
+        let wsum = 0, jsum = 0;
 
-for (let k = 0; k < n; k++) {
+        for (let k = 0; k < n; k++) {
+            let coords = [];
+            for (let i = 0; i < size; i++) {
+                let lat = (Math.floor(Math.random() * 18000) - 9000) / 100;
+                let lng = (Math.floor(Math.random() * 36000) - 18000) / 100;
+                coords.push([lat, lng])
+            }
+            let str = codec.encode(coords, 5);
 
-    let coords = [];
-    for (let i = 0; i < size; i++) {
-        let lat = (Math.floor(Math.random() * 18000) - 9000) / 100;
-        let lng = (Math.floor(Math.random() * 36000) - 18000) / 100;
-        coords.push([lat, lng])
-    }
-    let str = codec.encode(coords, 5);
+            let swasm = performance.now();
+            const path = decodeWasm(obj, str);
+            let ewasm = performance.now();
 
-    let swasm = performance.now();
-    const path = decodeWasm(obj, str);
-    let ewasm = performance.now();
+            let sjs = performance.now();
+            const pathJS = codec.decode(str);
+            let ejs = performance.now();
 
-    let sjs = performance.now();
-    const pathJS = codec.decode(str);
-    let ejs = performance.now();
+            for (let i = 0; i < size; i++) {
+                if ((path[i][0] !== pathJS[i][0]) || (path[i][1] !== pathJS[i][1])) {
+                    console.log(i);
+                    console.log(path);
+                    console.log(pathJS);
+                    process.exit(1);
+                }
+            }
 
-    wsum += ewasm - swasm;
-    jsum += ejs - sjs;
-}
-    console.log(size, wsum / n, jsum / n);
-})
+            wsum += ewasm - swasm;
+            jsum += ejs - sjs;
+        }
+        console.log(size, wsum / n, jsum / n);
+    })
 })();
