@@ -9,7 +9,7 @@ let importObj = {
         buffer: memory
     }
 };
-let encoder = new TextEncoder('utf-8');
+let encoder = new TextEncoder();
 
 function decodeWasm(obj, str) {
     let line = encoder.encode(str);
@@ -29,9 +29,13 @@ function decodeWasm(obj, str) {
 (async () => {
     let obj = await WebAssembly.instantiate(new Uint8Array(bytes), importObj);
 
-    console.log("n(points) wasm js");
+    const n = 100;
 
-[100, 10, 1000, 10000, 50000, 100000, 500000, 1000000, 5000000].forEach((size) => {
+    console.log("n(points) wasm js");
+[10, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 2000, 3000, 5000, 10000, 50000, 100000, 500000].forEach((size) => {
+    let wsum = 0, jsum = 0;
+
+for (let k = 0; k < n; k++) {
 
     let coords = [];
     for (let i = 0; i < size; i++) {
@@ -49,8 +53,9 @@ function decodeWasm(obj, str) {
     const pathJS = codec.decode(str);
     let ejs = performance.now();
 
-    console.log(size, ewasm - swasm, ejs - sjs);
-    console.log(path[0], pathJS[0], path[path.length - 1], pathJS[pathJS.length - 1]);
-
+    wsum += ewasm - swasm;
+    jsum += ejs - sjs;
+}
+    console.log(size, wsum / n, jsum / n);
 })
 })();
