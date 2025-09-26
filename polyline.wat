@@ -1,5 +1,5 @@
 (module
-  (import "env" "buffer" (memory 10000))
+  (import "env" "memory" (memory 10000))
 
   (func $decode (export "decode")
     (param $encodedPath i32) (param $len i32) (param $factor i32)
