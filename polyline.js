@@ -37,7 +37,9 @@ function checkResult(r1, r2) {
 
         const [rustResult, rustTime] = runBenchmark(str, (str) => rust.decode(str));
         const [jsResult, jsTime] = runBenchmark(str, codec.decode);
+        const [simdResult, simdTime] = runBenchmark(str, (str) => rust.decode_simd(str));
         checkResult(rustResult, jsResult);
-        console.log(`n=${size}, Rust=${rustTime}, Js=${jsTime}`);
+        checkResult(simdResult, jsResult);
+        console.log(`n=${size}, simd=${simdTime}, Rust=${rustTime}, Js=${jsTime}`);
     });
 })();

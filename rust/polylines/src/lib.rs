@@ -1,5 +1,7 @@
 #![cfg(target_arch = "wasm32")]
 
+use std::arch::wasm32::*;
+
 #[inline(always)]
 unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
     let mut result = 1;
@@ -38,4 +40,35 @@ fn decode(encoded: *const u8, len: usize, factor: i32) -> *mut f64  {
     }
     *(path.sub(1) as *mut usize) = point_index;
     path
+}
+
+#[no_mangle]
+#[target_feature(enable = "simd128")]
+pub unsafe extern "C"
+fn decode_simd(encoded: *const u8, len: usize, factor: f64) -> *mut f64  {
+    let path: *mut v128 = encoded.add(((len + 7) & !7) + 8) as *mut v128;
+
+    let mut index = 0;
+    let mut point_index = 0;
+
+    *path = f64x2(
+        decode_value(encoded, &mut index) as f64,
+        decode_value(encoded, &mut index) as f64,
+    );
+    while index < len {
+        *path.add(point_index + 1) = f64x2_add(
+            *path.add(point_index),
+            f64x2(
+                decode_value(encoded, &mut index) as f64,
+                decode_value(encoded, &mut index) as f64,
+            ),
+        );
+        *path.add(point_index) = f64x2_div(*path.add(point_index), f64x2(factor, factor));
+        point_index += 1;
+    }
+    *path.add(point_index) = f64x2_div(*path.add(point_index), f64x2(factor, factor));
+    point_index += 1;
+
+    *((path as *mut f64).sub(1) as *mut usize) = point_index << 1;
+    path as *mut f64
 }
