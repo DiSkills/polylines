@@ -9,5 +9,8 @@ $(TARGET): $(RUST_DIR)/src/lib.rs
 run: benchmark.js $(TARGET)
 	node $<
 
+test: polyline.js $(TARGET)
+	node $<
+
 clean:
 	rm -rf $(RUST_DIR)/target
