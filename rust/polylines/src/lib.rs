@@ -1,3 +1,5 @@
+#![cfg(target_arch = "wasm32")]
+
 #[inline(always)]
 unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
     let mut result = 1;
@@ -19,6 +21,7 @@ unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
 pub unsafe extern "C"
 fn decode(encoded: *const u8, len: usize, factor: i32) -> *mut f64  {
     let path: *mut f64 = encoded.add(((len + 7) & !7) + 8) as *mut f64;
+
     let mut index = 0;
     let mut lat = 0;
     let mut lng = 0;

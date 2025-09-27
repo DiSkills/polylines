@@ -1,13 +1,13 @@
-build: dependencies polyline.wasm
+RUST_DIR=rust/polylines
+TARGET=$(RUST_DIR)/target/wasm32-unknown-unknown/release/polylines.wasm
 
-run: polyline.js polyline.wasm
+all: run
+
+$(TARGET): $(RUST_DIR)/src/lib.rs
+	cd $(RUST_DIR) && cargo build --target=wasm32-unknown-unknown --release
+
+run: benchmark.js $(TARGET)
 	node $<
 
-dependencies:
-	npm install
-
-polyline.wasm: polyline.wat
-	wat2wasm $<
-
 clean:
-	rm polyline.wasm
+	rm -rf $(RUST_DIR)/target
