@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@googlemaps/polyline-codec": "^1.0.28"
+    "@googlemaps/polyline-codec": "^1.0.28",
+    "benchmark": "^2.1.4"
   }
 }
