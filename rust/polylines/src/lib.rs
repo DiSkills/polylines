@@ -21,7 +21,7 @@ unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
 
 #[no_mangle]
 pub unsafe extern "C"
-fn decode(encoded: *const u8, len: usize, factor: i32) -> *mut f64  {
+fn decode(encoded: *const u8, len: usize, factor: f64) -> *mut f64  {
     let path: *mut f64 = encoded.add(((len + 7) & !7) + 8) as *mut f64;
 
     let mut index = 0;
@@ -33,8 +33,8 @@ fn decode(encoded: *const u8, len: usize, factor: i32) -> *mut f64  {
         lat += decode_value(encoded, &mut index);
         lng += decode_value(encoded, &mut index);
 
-        *path.add(point_index) = (lat as f64) / (factor as f64);
-        *path.add(point_index + 1) = (lng as f64) / (factor as f64);
+        *path.add(point_index) = (lat as f64) / factor;
+        *path.add(point_index + 1) = (lng as f64) / factor;
 
         point_index += 2;
     }
