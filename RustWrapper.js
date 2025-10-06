@@ -4,6 +4,7 @@ const bytes = fs.readFileSync(filename);
 
 let memory, obj;
 const encoder = new TextEncoder();
+const decoder = new TextDecoder();
 
 async function init(mem) {
     if (arguments.length === 0) {
@@ -39,4 +40,17 @@ function decode_simd(str) {
     return run(str, obj.instance.exports.decode_simd);
 }
 
-module.exports = { decode, decode_simd, init };
+function encode(arr) {
+    const b = new Float64Array(memory.buffer, 0, arr.length << 1);
+    for (let i = 0, j = 0; i < arr.length; i++, j += 2) {
+        b[j] = arr[i][0];
+        b[j + 1] = arr[i][1];
+    }
+    const res = obj.instance.exports.encode(0, arr.length, 100000);
+    const len = new Uint32Array(memory.buffer, res - 4, 1)[0];
+
+    const encoded = new Uint8Array(memory.buffer, res, len);
+    return decoder.decode(encoded);
+}
+
+module.exports = { decode, decode_simd, init, encode };
