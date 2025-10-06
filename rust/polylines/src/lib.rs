@@ -1,6 +1,7 @@
 mod types;
 mod decode;
 mod encode;
+mod simd;
 
 use crate::types::LatLng;
 
