@@ -1,9 +1,8 @@
 const fs = require('fs');
 const codec = require('@googlemaps/polyline-codec');
-const RustWrapper = require(__dirname + '/RustWrapper');
+const rust = require(`${__dirname}/RustWrapper`);
 
 const memory = new WebAssembly.Memory({ initial: 10000 });
-const rustFilename = __dirname + '/rust/polylines/target/wasm32-unknown-unknown/release/polylines.wasm';
 
 function runBenchmark(str, callback) {
     const start = performance.now();
@@ -24,7 +23,7 @@ function checkResult(r1, r2) {
 }
 
 (async () => {
-    const rust = await RustWrapper.create(rustFilename, memory);
+    await rust.init(memory);
 
     [10, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 2000, 3000, 5000, 10000, 50000, 100000, 500000].forEach((size) => {
         const coords = [];
@@ -35,9 +34,11 @@ function checkResult(r1, r2) {
         }
         const str = codec.encode(coords, 5);
 
-        const [rustResult, rustTime] = runBenchmark(str, (str) => rust.decode(str));
         const [jsResult, jsTime] = runBenchmark(str, codec.decode);
+        const [rustResult, rustTime] = runBenchmark(str, rust.decode);
+        const [simdResult, simdTime] = runBenchmark(str, rust.decode_simd);
         checkResult(rustResult, jsResult);
-        console.log(`n=${size}, Rust=${rustTime}, Js=${jsTime}`);
+        checkResult(simdResult, jsResult);
+        console.log(`n=${size}, simd=${simdTime}, Rust=${rustTime}, Js=${jsTime}`);
     });
 })();

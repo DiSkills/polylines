@@ -6,10 +6,10 @@ all: run
 $(TARGET): $(RUST_DIR)/src/lib.rs
 	cd $(RUST_DIR) && cargo build --target=wasm32-unknown-unknown --release
 
-run: benchmark.js $(TARGET)
+run: geopuzzle.js $(TARGET)
 	node $<
 
-test: polyline.js $(TARGET)
+benchmark: benchmark.js $(TARGET)
 	node $<
 
 clean:
