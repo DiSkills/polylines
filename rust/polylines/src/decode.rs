@@ -1,13 +1,12 @@
-use crate::types::LatLng;
+use crate::types::*;
 
 #[inline]
-unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
+fn decode_value(encoded: &mut EncodedStream) -> i32 {
     let mut result = 1;
     let mut shift = 0;
     let mut b: i32;
     loop {
-        b = *encoded.add(*index) as i32 - 63 - 1;
-        *index += 1;
+        b = encoded.get() as i32 - 63 - 1;
         result += b << shift;
         shift += 5;
         if b < 0x1f {
@@ -18,24 +17,17 @@ unsafe fn decode_value(encoded: *const u8, index: &mut usize) -> i32 {
 }
 
 #[inline]
-pub unsafe fn decode_line(
-    encoded: *const u8, len: usize, factor: f64, path: *mut LatLng<f64>
-) -> usize  {
-    let mut i = 0;
+pub fn decode_line(encoded: &mut EncodedStream, factor: f64, path: &mut Path) {
     let mut coord = LatLng { lat: 0, lng: 0 };
-    let mut index = 0;
 
-    while i < len {
-        coord.lat += decode_value(encoded, &mut i);
-        coord.lng += decode_value(encoded, &mut i);
+    while !encoded.is_empty() {
+        coord.lat += decode_value(encoded);
+        coord.lng += decode_value(encoded);
 
-        *path.add(index) = LatLng {
-            lat: coord.lat as f64 / factor,
-            lng: coord.lng as f64 / factor,
-        };
-        index += 1;
+        path.push(&mut LatLng {
+            lat: coord.lat as f64 / factor, lng: coord.lng as f64 / factor,
+        });
     }
-    index
 }
 
 #[cfg(test)]
@@ -44,50 +36,41 @@ mod tests {
 
     #[test]
     fn test_decode_single_value() {
-        let s = "_p~iF";
-        let mut index = 0;
-        let result = unsafe {
-            decode_value(s.as_bytes().as_ptr(), &mut index)
-        };
+        let mut s = b"_p~iF".to_vec();
+        let mut encoded = EncodedStream::new(s.as_mut_ptr(), s.len());
+
+        let result = decode_value(&mut encoded);
         assert_eq!(result, 3850000);
-        assert_eq!(index, s.len());
     }
 
     #[test]
     fn test_decode_two_values() {
-        let s = "_p~iF~ps|U";
-        let mut index = 0;
+        let mut s = b"_p~iF~ps|U".to_vec();
+        let mut encoded = EncodedStream::new(s.as_mut_ptr(), s.len());
 
-        let lat = unsafe {
-            decode_value(s.as_bytes().as_ptr(), &mut index)
-        };
+        let lat = decode_value(&mut encoded);
         assert_eq!(lat, 3850000);
-        assert_eq!(index, 5);
-
-        let lng = unsafe {
-            decode_value(s.as_bytes().as_ptr(), &mut index)
-        };
+        let lng = decode_value(&mut encoded);
         assert_eq!(lng, -12020000);
-        assert_eq!(index, s.len());
     }
 
     #[test]
     fn test_decode_line() {
-        let s = "_p~iF~ps|U_ulLnnqC_mqNvxq`@";
-        let mut path = [LatLng { lat: 0.0, lng: 0.0 }; 3];
+        let mut s = b"_p~iF~ps|U_ulLnnqC_mqNvxq`@".to_vec();
+        let mut encoded = EncodedStream::new(s.as_mut_ptr(), s.len());
+
+        let mut points = [LatLng { lat: 0.0, lng: 0.0 }; 3];
+        let mut path = Path::new(points.as_mut_ptr(), 0);
+
         let expected = [
             LatLng { lat: 38.5, lng: -120.2 },
             LatLng { lat: 40.7, lng: -120.95 },
             LatLng { lat: 43.252, lng: -126.453 },
         ];
 
-        let len = unsafe {
-            decode_line(
-                s.as_bytes().as_ptr(), s.len(), 1e5, path.as_mut_ptr()
-            )
-        };
-        assert_eq!(len, 3);
-        for (p, e) in path.iter().zip(expected.iter()) {
+        decode_line(&mut encoded, 1e5, &mut path);
+        assert_eq!(path.len(), 3);
+        for (p, e) in points.iter().zip(expected.iter()) {
             assert_eq!(p.lat, e.lat);
             assert_eq!(p.lng, e.lng);
         }
