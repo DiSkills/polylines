@@ -2,7 +2,7 @@
   (import "env" "memory" (memory 17))
 
   (func $decode (export "decode")
-    (param $encodedPath i32) (param $len i32) (param $factor i32)
+    (param $encodedPath i32) (param $len i32) (param $factor f64)
     (result i32 i32)
 
     (local $path i32)
@@ -168,7 +168,6 @@
       local.get $lat
       f64.convert_i32_s
       local.get $factor
-      f64.convert_i32_s
       f64.div
       f64.store
 
@@ -180,7 +179,6 @@
       local.get $lng
       f64.convert_i32_s
       local.get $factor
-      f64.convert_i32_s
       f64.div
       f64.store
 
@@ -189,6 +187,7 @@
       i32.const 16
       i32.add
       local.set $point
+
       br $cycle_index
     ))
 
