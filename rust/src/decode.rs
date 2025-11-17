@@ -25,7 +25,8 @@ pub fn decode_line(encoded: &mut EncodedStream, factor: f64, path: &mut Path) {
         coord.lng += decode_value(encoded);
 
         path.push(&mut LatLng {
-            lat: coord.lat as f64 / factor, lng: coord.lng as f64 / factor,
+            lat: coord.lat as f64 / factor,
+            lng: coord.lng as f64 / factor,
         });
     }
 }

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const filename = `${__dirname}/target/wasm32-unknown-unknown/release/polylines_simd.wasm`;
+const filename = `${__dirname}/target/wasm32-unknown-unknown/release/rust.wasm`;
 const bytes = fs.readFileSync(filename);
 
 let memory = null;

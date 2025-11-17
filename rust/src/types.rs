@@ -39,8 +39,8 @@ impl Path {
     pub fn push(&mut self, item: &mut LatLng<f64>) {
         unsafe {
             *self.p.add(self.len) = *item;
-            self.len += 1;
         }
+        self.len += 1;
     }
 
     pub fn len(&mut self) -> usize {
