@@ -1,3 +1,4 @@
 node_modules
 rust/polylines/target/
+rust/polylines-simd/target/
 polyline.wasm
