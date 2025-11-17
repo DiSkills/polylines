@@ -32,20 +32,4 @@ function decode(str, factor = 1e5) {
     return path;
 }
 
-function decode_simd(str) {
-    const line = new TextEncoder().encode(str);
-    const encoded = new Uint8Array(memory.buffer, 0, line.length);
-    encoded.set(line);
-
-    const res = instance.exports.decode_simd(0, line.length, 100000);
-    const len = new Uint32Array(memory.buffer, res - 8, 1)[0];
-
-    const b = new Float64Array(memory.buffer, res, len);
-    const path = new Array(len >> 1);
-    for (let i = 0, j = 0; i < len; j++, i += 2) {
-        path[j] = [b[i], b[i + 1]];
-    }
-    return path;
-}
-
-module.exports = { init, decode, decode_simd };
+module.exports = { init, decode };

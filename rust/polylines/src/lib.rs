@@ -1,6 +1,5 @@
 mod types;
 mod decode;
-mod simd;
 
 use crate::types::*;
 
