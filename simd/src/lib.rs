@@ -43,17 +43,16 @@ fn decode_value(encoded: *const i8, index: &mut usize) -> i32 {
     return if result & 1 != 0 { !(result >> 1) } else { result >> 1 };
 }
 
-#[no_mangle]
-#[target_feature(enable = "simd128")]
-pub fn decode(encoded: *mut i8, len: usize, factor: f64) -> *mut f64 {
+#[inline]
+fn decode_line(
+    encoded: *const i8, len: usize, path: *mut v128, factor: f64,
+) -> usize {
     sub64(encoded as *mut v128, len);
-    let path: *mut v128 = unsafe {
-        encoded.add(((len + 7) & !7) + 8) as *mut v128
-    };
 
     let mut index = 0;
-    let mut point_index = 0;
+    let mut point = 0;
 
+    let divisor = f64x2_splat(factor);
     unsafe {
         *path = f64x2(
             decode_value(encoded, &mut index) as f64,
@@ -61,28 +60,43 @@ pub fn decode(encoded: *mut i8, len: usize, factor: f64) -> *mut f64 {
         );
     }
 
-    let divisor = f64x2_splat(factor);
     while index < len {
         unsafe {
-            *path.add(point_index + 1) = f64x2_add(
-                *path.add(point_index),
+            *path.add(point + 1) = f64x2_add(
+                *path.add(point),
                 f64x2(
                     decode_value(encoded, &mut index) as f64,
                     decode_value(encoded, &mut index) as f64,
                 ),
             );
-            *path.add(point_index) = f64x2_div(*path.add(point_index), divisor);
+            *path.add(point) = f64x2_div(*path.add(point), divisor);
         }
-        point_index += 1;
+        point += 1;
     }
 
     unsafe {
-        *path.add(point_index) = f64x2_div(*path.add(point_index), divisor);
+        *path.add(point) = f64x2_div(*path.add(point), divisor);
     }
-    point_index += 1;
 
+    point + 1
+}
+
+#[no_mangle]
+#[target_feature(enable = "simd128")]
+pub fn decode(encoded: *mut i8, len: usize, factor: f64) -> *mut f64 {
+    let path: *mut v128 = unsafe {
+        encoded.add(((len + 7) & !7) + 8) as *mut v128
+    };
+
+    let path_len = if len > 0 {
+        decode_line(encoded, len, path, factor)
+    } else {
+        0
+    };
+
+    let res = path as *mut f64;
     unsafe {
-        *((path as *mut f64).sub(1) as *mut usize) = point_index * 2;
+        *(res.sub(1) as *mut usize) = path_len * 2;
     }
-    path as *mut f64
+    res
 }
