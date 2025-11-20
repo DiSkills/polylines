@@ -1,11 +1,16 @@
 const fs = require('fs');
 
 const generator = require(`${__dirname}/generator`);
+const generators = [
+    generator.generateCompletelyRandomPath,
+    generator.generateStraightPath,
+    generator.generateRandomWalkPath,
+];
 
 const implementation = process.argv[2];
-const size = process.argv[3];
-const gentype = process.argv[4];
-const n = process.argv[5];
+const warmUpSize = parseInt(process.argv[3]);
+const sampleSize = parseInt(process.argv[4]);
+const length = parseInt(process.argv[5]);
 
 const js = require('@googlemaps/polyline-codec');
 const wat = require(`${__dirname}/../wat/wrapper`);
@@ -18,6 +23,22 @@ function runBenchmark(decode, str) {
     return [result, end - start];
 }
 
+function collect(decode, sampleSize, length) {
+    let s = 0;
+    generators.forEach((generate) => {
+        for (let i = 0; i < sampleSize; i++) {
+            const str = generate(length);
+
+            const [result, time] = runBenchmark(decode, str);
+            if (!result || result.length == 0) {
+                throw new Error("bad result");
+            }
+            s += time;
+        }
+    });
+    return s / (generators.length * sampleSize);
+}
+
 (async () => {
     await wat.init();
     await rust.init();
@@ -26,22 +47,16 @@ function runBenchmark(decode, str) {
         "wat": wat.decode, "rust": rust.decode, "js": js.decode,
     }[implementation];
 
-    const generate = {
-        "random": generator.generateCompletelyRandomPath,
-        "walk": generator.generateRandomWalkPath,
-        "straight": generator.generateStraightPath,
-    }[gentype];
+    generators.forEach((generate) => {
+        for (let i = 0; i < warmUpSize; i++) {
+            const str = generate(length);
 
-    let s = 0;
-    for (let i = 0; i < size; i++) {
-        const str = generate(n);
-        const [result, time] = runBenchmark(decode, str);
-        s += time;
-    }
+            const result = decode(str);
+            if (!result || result.length == 0) {
+                throw new Error("bad result");
+            }
+        }
+    });
 
-    if (s >= 0) {
-        const str = generate(n);
-        const [result, time] = runBenchmark(decode, str);
-        console.log(time);
-    }
+    console.log(collect(decode, sampleSize, length));
 })();
