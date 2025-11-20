@@ -1,5 +1,10 @@
 const fs = require('fs');
+
+const generator = require(`${__dirname}/generator`);
+
 const implementation = process.argv[2];
+const size = process.argv[3];
+const n = 1000;
 
 const js = require('@googlemaps/polyline-codec');
 const wat = require(`${__dirname}/../wat/wrapper`);
@@ -29,6 +34,14 @@ function runBenchmark(decode, countries) {
         "wat": wat.decode, "rust": rust.decode, "js": js.decode,
     }[implementation];
 
-    const [result, time] = runBenchmark(decode, countries);
-    console.log(time);
+    let s = 0;
+    for (let i = 0; i < size; i++) {
+        const str = generator.generateRandomWalkPath(n);
+        const result = decode(str);
+        s += Math.abs(result[0][0]);
+    }
+    if (s >= 0) {
+        const [result, time] = runBenchmark(decode, countries);
+        console.log(time);
+    }
 })();
