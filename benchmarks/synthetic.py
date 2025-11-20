@@ -41,7 +41,6 @@ def main() -> None:
                 warmup_size, sample_size, length,
             )
             data[implementation].append(result)
-        print(length)
 
     sns.set_theme(style="darkgrid")
 
