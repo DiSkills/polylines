@@ -1,0 +1,1314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd 5.2.9" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx" xmlns:gpxtpx="https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>2025-11-15_11-23_Sat</name>
+    <extensions>
+      <osmand:activity>road_cycling</osmand:activity>
+    </extensions>
+  </metadata>
+  <trk>
+    <trkseg>
+      <trkpt lat="59.2632579" lon="18.0724369">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:23:44Z</time>
+        <hdop>3.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:heading>21.0</osmand:heading>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632669" lon="18.0724771">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:23:47Z</time>
+        <hdop>3.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:heading>325.0</osmand:heading>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632733" lon="18.0724987">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:23:51Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:heading>353.0</osmand:heading>
+          <osmand:speed>0.5</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632814" lon="18.0725504">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:23:54Z</time>
+        <hdop>3.5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632894" lon="18.0726182">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:23:57Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633192" lon="18.0726746">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:01Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633461" lon="18.0727191">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:04Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633709" lon="18.0727641">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:07Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633921" lon="18.0727963">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:10Z</time>
+        <hdop>5.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263417" lon="18.0728478">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:13Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634317" lon="18.0728975">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:17Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263456" lon="18.0729603">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:20Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634763" lon="18.0729912">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:23Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635026" lon="18.0730204">
+        <ele>79.8</ele>
+        <time>2025-11-15T10:24:27Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635309" lon="18.0730753">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:30Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263548" lon="18.0731119">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:33Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635707" lon="18.0731692">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:37Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635875" lon="18.0732014">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:40Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636035" lon="18.0732616">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:43Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636002" lon="18.0732991">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:47Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636003" lon="18.0733478">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:50Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635774" lon="18.0733906">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:53Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263571" lon="18.0734366">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:24:56Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635673" lon="18.0734817">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:00Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635592" lon="18.0735318">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:03Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635472" lon="18.0735723">
+        <ele>79.3</ele>
+        <time>2025-11-15T10:25:06Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635323" lon="18.0736206">
+        <ele>79.3</ele>
+        <time>2025-11-15T10:25:10Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635158" lon="18.0736647">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:13Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634981" lon="18.0736977">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:16Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634913" lon="18.0737367">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:19Z</time>
+        <hdop>5.4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634841" lon="18.0737921">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:25:23Z</time>
+        <hdop>5.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.26348" lon="18.0738583">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:26Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634709" lon="18.0738851">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:25:29Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634721" lon="18.0739328">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:25:33Z</time>
+        <hdop>4.5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634773" lon="18.0739755">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:36Z</time>
+        <hdop>4.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634934" lon="18.0740044">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:39Z</time>
+        <hdop>4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635193" lon="18.0740437">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:25:42Z</time>
+        <hdop>4.5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635255" lon="18.0740839">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:25:45Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635336" lon="18.0741543">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:48Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635292" lon="18.0742074">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:52Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635428" lon="18.0742639">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:55Z</time>
+        <hdop>4.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635705" lon="18.0742802">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:25:58Z</time>
+        <hdop>4.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635841" lon="18.0742654">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:26:01Z</time>
+        <hdop>4.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635925" lon="18.0742477">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:26:04Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635936" lon="18.0742718">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:26:07Z</time>
+        <hdop>6</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263575" lon="18.0742814">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:11Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635523" lon="18.0743003">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:14Z</time>
+        <hdop>5.4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635191" lon="18.074248">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:17Z</time>
+        <hdop>5.5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635192" lon="18.0741699">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:20Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635191" lon="18.0741044">
+        <ele>77.3</ele>
+        <time>2025-11-15T10:26:23Z</time>
+        <hdop>4.6</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635117" lon="18.0740373">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:27Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634997" lon="18.0739756">
+        <ele>78.3</ele>
+        <time>2025-11-15T10:26:30Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635028" lon="18.0739227">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:26:33Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634986" lon="18.0738719">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:26:36Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635106" lon="18.0738232">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:26:40Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635256" lon="18.0737589">
+        <ele>79.5</ele>
+        <time>2025-11-15T10:26:43Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635305" lon="18.0737011">
+        <ele>79.5</ele>
+        <time>2025-11-15T10:26:46Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263544" lon="18.0736242">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:26:50Z</time>
+        <hdop>5.3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635511" lon="18.0735658">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:26:53Z</time>
+        <hdop>5.4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.2</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635786" lon="18.0735125">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:26:57Z</time>
+        <hdop>5.4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635967" lon="18.0734698">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:00Z</time>
+        <hdop>5.4</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636112" lon="18.0734229">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:03Z</time>
+        <hdop>5.2</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636149" lon="18.0733734">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:07Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636184" lon="18.0733238">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:10Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.26362" lon="18.0732825">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:13Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636195" lon="18.0732283">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:17Z</time>
+        <hdop>4.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636333" lon="18.073179">
+        <ele>79.8</ele>
+        <time>2025-11-15T10:27:20Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636254" lon="18.0731427">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:23Z</time>
+        <hdop>4.6</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2636204" lon="18.0730893">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:27Z</time>
+        <hdop>4.7</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635969" lon="18.0730508">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:30Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635707" lon="18.0730147">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:34Z</time>
+        <hdop>5.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635436" lon="18.0729649">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:37Z</time>
+        <hdop>5</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2635147" lon="18.0729169">
+        <ele>79.1</ele>
+        <time>2025-11-15T10:27:41Z</time>
+        <hdop>4.9</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634852" lon="18.0728841">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:44Z</time>
+        <hdop>3.8</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634598" lon="18.0728659">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:47Z</time>
+        <hdop>3.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634335" lon="18.0728509">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:51Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634171" lon="18.0727993">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:54Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2634001" lon="18.0727403">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:27:58Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263376" lon="18.0726691">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:01Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633395" lon="18.0726356">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:04Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2633154" lon="18.0726145">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:08Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632855" lon="18.0725774">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:11Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632663" lon="18.072528">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:15Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632452" lon="18.0724837">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:18Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2632254" lon="18.0724333">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:21Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.263207" lon="18.0723851">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:24Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2631857" lon="18.0723221">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:28Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2631694" lon="18.0722588">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:31Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2631438" lon="18.0722116">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:34Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2631182" lon="18.0721609">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:38Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2630889" lon="18.0721218">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:41Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2630601" lon="18.0720954">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:45Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2630391" lon="18.072048">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:48Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2630145" lon="18.0720205">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:51Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2629891" lon="18.0719969">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:54Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.262974" lon="18.0719713">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:28:57Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2629499" lon="18.0719379">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:01Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2629411" lon="18.0718895">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:04Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2629287" lon="18.0718423">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:08Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2629074" lon="18.0718258">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:11Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628892" lon="18.0718088">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:14Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628714" lon="18.0718005">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:17Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628505" lon="18.0717829">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:20Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.26283" lon="18.0717708">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:24Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628096" lon="18.0717202">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:27Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628193" lon="18.0716788">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:30Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628272" lon="18.07162">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:34Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.262829" lon="18.0715775">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:37Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628252" lon="18.0715405">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:40Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.262823" lon="18.0715311">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:43Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.3</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628235" lon="18.0715128">
+        <ele>79.7</ele>
+        <time>2025-11-15T10:29:47Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.5</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2628106" lon="18.0714719">
+        <ele>64.5</ele>
+        <time>2025-11-15T10:29:50Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2627914" lon="18.0714399">
+        <ele>65.4</ele>
+        <time>2025-11-15T10:29:53Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2627665" lon="18.0714344">
+        <ele>65.3</ele>
+        <time>2025-11-15T10:29:57Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2627393" lon="18.071451">
+        <ele>65.5</ele>
+        <time>2025-11-15T10:30:00Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2627189" lon="18.0714592">
+        <ele>65.5</ele>
+        <time>2025-11-15T10:30:03Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2626972" lon="18.0714596">
+        <ele>65.5</ele>
+        <time>2025-11-15T10:30:07Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2626744" lon="18.0714711">
+        <ele>65.1</ele>
+        <time>2025-11-15T10:30:10Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2626507" lon="18.0714749">
+        <ele>67.3</ele>
+        <time>2025-11-15T10:30:13Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.8</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2626295" lon="18.0714469">
+        <ele>66.5</ele>
+        <time>2025-11-15T10:30:17Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2626126" lon="18.0714441">
+        <ele>67</ele>
+        <time>2025-11-15T10:30:20Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625994" lon="18.071441">
+        <ele>67.5</ele>
+        <time>2025-11-15T10:30:23Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.5</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625842" lon="18.0714379">
+        <ele>66.9</ele>
+        <time>2025-11-15T10:30:26Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.4</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625696" lon="18.0714369">
+        <ele>66.2</ele>
+        <time>2025-11-15T10:30:30Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.4</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625541" lon="18.07143">
+        <ele>65.7</ele>
+        <time>2025-11-15T10:30:33Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625436" lon="18.0714427">
+        <ele>63.5</ele>
+        <time>2025-11-15T10:30:36Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.3</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625351" lon="18.0714364">
+        <ele>62.9</ele>
+        <time>2025-11-15T10:30:40Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.4</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625237" lon="18.0714376">
+        <ele>63</ele>
+        <time>2025-11-15T10:30:43Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.5</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.262526" lon="18.0714546">
+        <ele>62.1</ele>
+        <time>2025-11-15T10:30:46Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.3</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625194" lon="18.0714515">
+        <ele>61</ele>
+        <time>2025-11-15T10:30:49Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.2</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2625071" lon="18.0714559">
+        <ele>59.5</ele>
+        <time>2025-11-15T10:30:53Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.2</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2624927" lon="18.0714406">
+        <ele>58.8</ele>
+        <time>2025-11-15T10:30:56Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.26247" lon="18.0714178">
+        <ele>58.1</ele>
+        <time>2025-11-15T10:31:00Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2624567" lon="18.0713755">
+        <ele>57.9</ele>
+        <time>2025-11-15T10:31:03Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2624328" lon="18.0713369">
+        <ele>57.2</ele>
+        <time>2025-11-15T10:31:06Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2624159" lon="18.0712927">
+        <ele>56.4</ele>
+        <time>2025-11-15T10:31:09Z</time>
+        <hdop>3.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2624127" lon="18.0712536">
+        <ele>55</ele>
+        <time>2025-11-15T10:31:13Z</time>
+        <hdop>3.1</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>0.6</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623972" lon="18.0712156">
+        <ele>54.1</ele>
+        <time>2025-11-15T10:31:16Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623786" lon="18.0711703">
+        <ele>53.5</ele>
+        <time>2025-11-15T10:31:19Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623476" lon="18.0711678">
+        <ele>54</ele>
+        <time>2025-11-15T10:31:23Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623335" lon="18.071225">
+        <ele>55</ele>
+        <time>2025-11-15T10:31:26Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1.1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623121" lon="18.0712811">
+        <ele>55.4</ele>
+        <time>2025-11-15T10:31:29Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:speed>1</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2623004" lon="18.0713443">
+        <ele>55.5</ele>
+        <time>2025-11-15T10:31:33Z</time>
+        <hdop>3.8</hdop>
+        <extensions>
+          <osmand:provider>gps</osmand:provider>
+          <osmand:heading>290.0</osmand:heading>
+          <osmand:speed>0.7</osmand:speed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="59.2622728" lon="18.0713689">
+        <ele>55.4</ele>
+        <time>2025-11-15T10:31:36Z</time>
+        <hdop>3</hdop>
+        <extensions>
+          <osmand:provider>fused</osmand:provider>
+          <osmand:heading>278.0</osmand:heading>
+          <osmand:speed>0.9</osmand:speed>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
