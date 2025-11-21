@@ -1,14 +1,14 @@
 const fs = require('fs');
 
-const generator = require(`${__dirname}/generator`);
+const generator = require(`${__dirname}/../generator`);
 
 const implementation = process.argv[2];
-const size = process.argv[3];
-const n = 1000;
+const warmUpSize = process.argv[3];
+const length = 1000;
 
 const js = require('@googlemaps/polyline-codec');
-const wat = require(`${__dirname}/../wat/wrapper`);
-const rust = require(`${__dirname}/../rust/wrapper`);
+const wat = require(`${__dirname}/../../wat/wrapper`);
+const rust = require(`${__dirname}/../../rust/wrapper`);
 
 const data = fs.readFileSync(`${__dirname}/geopuzzle.json`);
 const countries = JSON.parse(data).questions;
@@ -34,14 +34,18 @@ function runBenchmark(decode, countries) {
         "wat": wat.decode, "rust": rust.decode, "js": js.decode,
     }[implementation];
 
-    let s = 0;
-    for (let i = 0; i < size; i++) {
-        const str = generator.generateRandomWalkPath(n);
+    for (let i = 0; i < warmUpSize; i++) {
+        const str = generator.generateRandomWalkPath(length);
+
         const result = decode(str);
-        s += Math.abs(result[0][0]);
+        if (!result || result.length == 0) {
+            throw new Error("bad result");
+        }
     }
-    if (s >= 0) {
-        const [result, time] = runBenchmark(decode, countries);
-        console.log(time);
+
+    const [result, time] = runBenchmark(decode, countries);
+    if (!result || result.length == 0) {
+        throw new Error("bad result");
     }
+    console.log(time);
 })();
