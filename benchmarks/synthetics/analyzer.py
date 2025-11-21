@@ -1,8 +1,6 @@
 import subprocess
-import sys
 
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sns
 
 from collections import defaultdict
@@ -25,6 +23,20 @@ def get_algorithm_running_time(
     return float(result.stdout)
 
 
+def collect(
+    sample_size: int, warmup_size: int, lengths: list[int],
+) -> dict[Implementation, list[float]]:
+    data = defaultdict(list)
+    for length in lengths:
+        for implementation in "js", "wat", "rust":
+            result = get_algorithm_running_time(
+                "benchmark.js", implementation,
+                warmup_size, sample_size, length,
+            )
+            data[implementation].append(result)
+    return data
+
+
 def main() -> None:
     lengths = [
         5, 10, 50, 100, 500, 1000, 5000,
@@ -32,24 +44,18 @@ def main() -> None:
     ]
     sample_size = 33
 
-    warmup_size = int(sys.argv[1])
-    data = defaultdict(list)
-    for length in lengths:
-        for implementation in "js", "wat", "rust":
-            result = get_algorithm_running_time(
-                "synthetic.js", implementation,
-                warmup_size, sample_size, length,
-            )
-            data[implementation].append(result)
-
     sns.set_theme(style="darkgrid")
+    _, axs = plt.subplots(2)
 
-    df = pd.DataFrame(data)
-    sns.lineplot(data=df)
-
-    plt.title(f"Number of warm-up iterations = {warmup_size}")
-    plt.xticks(range(len(lengths)), [str(l) for l in lengths])
-    plt.ylabel("Time (ms)")
+    for i, warmup_size in enumerate([0, 500]):
+        data = collect(sample_size, warmup_size, lengths)
+        for implementation in data:
+            sns.lineplot(
+                x=lengths, y=data[implementation],
+                label=implementation, ax=axs[i],
+            )
+            axs[i].set_title(f"Number of warm-up = {warmup_size}")
+            axs[i].set_ylabel("Time (ms)")
 
     plt.show()
 

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const generator = require(`${__dirname}/generator`);
+const generator = require(`${__dirname}/../generator`);
 const generators = [
     generator.generateCompletelyRandomPath,
     generator.generateStraightPath,
@@ -13,8 +13,8 @@ const sampleSize = parseInt(process.argv[4]);
 const length = parseInt(process.argv[5]);
 
 const js = require('@googlemaps/polyline-codec');
-const wat = require(`${__dirname}/../wat/wrapper`);
-const rust = require(`${__dirname}/../rust/wrapper`);
+const wat = require(`${__dirname}/../../wat/wrapper`);
+const rust = require(`${__dirname}/../../rust/wrapper`);
 
 function runBenchmark(decode, str) {
     const start = performance.now();
