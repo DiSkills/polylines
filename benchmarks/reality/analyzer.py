@@ -1,89 +1,73 @@
 import json
-import random
-import subprocess
 import sys
 
-import matplotlib.pyplot as plt
-import pandas as pd
-import scikit_posthocs as sp
-import seaborn as sns
+import numpy as np
 
-from collections import defaultdict
-from typing import Literal, TypeAlias
+from itertools import combinations
 
+from pandas import DataFrame
+from scikit_posthocs import posthoc_nemenyi_friedman
 from scipy import stats
-
-Implementation: TypeAlias = Literal["js", "rust", "wat"]
-
-
-def shuffle_data_file(filename: str) -> None:
-    with open(filename, "r+") as file:
-        data = json.load(file)
-        random.shuffle(data["questions"])
-
-        file.seek(0)
-        json.dump(data, file)
+from statsmodels.stats.multitest import multipletests
 
 
-def get_algorithm_running_time(
-    benchmark: str, implementation: Implementation, *args,
-) -> float:
-    result = subprocess.run(
-        ["node", benchmark, implementation, *args], capture_output=True,
-    )
-    return float(result.stdout)
+def wilcoxon(df: DataFrame) -> None:
+    pairs, pvals = [], []
+    for im1, im2 in combinations(df.columns, 2):
+        _, p = stats.wilcoxon(df[im1], df[im2])
+        pairs.append((im1, im2))
+        pvals.append(p)
+    _, pvals_corrected, *_ = multipletests(pvals, method="holm")
+
+    res, res_corrected = [], []
+    for _ in range(len(df.columns)):
+        res.append([1] * len(df.columns))
+        res_corrected.append([1] * len(df.columns))
+
+    indexes = {item: i for i, item in enumerate(df.columns)}
+    for (im1, im2), p, p_corrected in zip(pairs, pvals, pvals_corrected):
+        i1, i2 = indexes[im1], indexes[im2]
+
+        res[i1][i2] = res[i2][i1] = p
+        res_corrected[i1][i2] = res_corrected[i2][i1] = p_corrected
+
+    w = DataFrame(res, index=df.columns, columns=df.columns)
+    print("\nWilcoxon:", w, sep='\n')
+
+    w = DataFrame(res_corrected, index=df.columns, columns=df.columns)
+    print("\nWilcoxon-Holm:", w, sep='\n')
 
 
-def collect_statistics(
-    sample_size: int, benchmark: str, filename: str,
-    implementations: list[Implementation], warmup_size: int,
-) -> dict[Implementation, list[float]]:
-    statistics = defaultdict(list)
-    for _ in range(sample_size):
-        shuffle_data_file(filename)
-        for implementation in implementations:
-            time = get_algorithm_running_time(
-                benchmark, implementation, str(warmup_size),
-            )
-            statistics[implementation].append(time)
-    return statistics
+def winsorize(
+    statistics: dict[str, list[float]], limits: list[float],
+) -> None:
+    for k, v in statistics.items():
+        data = np.array(v)
+        statistics[k] = stats.mstats.winsorize(data, limits=limits)
 
 
 def main() -> None:
-    sample_size = int(sys.argv[1])
-    warmup_size = int(sys.argv[2])
+    filename = sys.argv[1]
 
-    statistics = collect_statistics(
-        sample_size, "benchmark.js", "geopuzzle.json",
-        ["js", "wat", "rust"], warmup_size,
-    )
+    with open(filename) as file:
+        statistics = json.load(file)
 
-    df = pd.DataFrame(statistics)
-    print(df.describe())
+    winsorization = input("Do you need data winsorization? [y/n] ")
+    if winsorization == "y":
+        limits = [float(i) for i in input("Limits: ").split()]
+        winsorize(statistics, limits)
 
-    sns.set_theme(style="darkgrid")
-    _, (ax1, ax2) = plt.subplots(1, 2)
-
-    sns.boxplot(data=df, ax=ax1)
-    sns.swarmplot(data=df, color="grey", ax=ax1)
-    ax1.set_title("Boxplots")
-    ax1.set_ylabel("Time (ms)")
-
-    sns.histplot(data=df, ax=ax2, kde=True)
-    ax2.set_title("Histograms")
-    ax2.set_xlabel("Time (ms)")
+    df = DataFrame(statistics)
+    print("Statistics:", df.describe(), sep='\n')
 
     p = stats.friedmanchisquare(*statistics.values()).pvalue
+    print("=" * 50)
+    print(f"Friedman p = {p}")
+    print("=" * 50)
     if p >= 0.05:
         return
-    print(f"Implementations are not the same, Friedman p = {p}")
-
-    print("Nemeny:")
-    print(sp.posthoc_nemenyi_friedman(df))
-
-    # manager = plt.get_current_fig_manager()
-    # manager.window.showMaximized()
-    plt.show()
+    print("\nNemenyi:", posthoc_nemenyi_friedman(df), sep='\n')
+    wilcoxon(df)
 
 
 if __name__ == "__main__":
