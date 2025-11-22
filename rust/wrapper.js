@@ -7,7 +7,7 @@ let instance = null;
 
 async function init(mem = null) {
     if (!mem) {
-        mem = new WebAssembly.Memory({ initial: 40 });
+        mem = new WebAssembly.Memory({ initial: 400 });
     }
     memory = mem;
     obj = await WebAssembly.instantiate(
