@@ -7,11 +7,11 @@ let instance = null;
 
 async function init(mem = null) {
     if (!mem) {
-        mem = new WebAssembly.Memory({ initial: 400 });
+        mem = new WebAssembly.Memory({initial: 16});
     }
     memory = mem;
-    obj = await WebAssembly.instantiate(
-        new Uint8Array(bytes), { env: { memory } },
+    const obj = await WebAssembly.instantiate(
+        new Uint8Array(bytes), {env: {memory}},
     );
     instance = obj.instance;
 }
@@ -32,4 +32,4 @@ function decode(str, factor = 1e5) {
     return path;
 }
 
-module.exports = { init, decode };
+module.exports = {init, decode};
