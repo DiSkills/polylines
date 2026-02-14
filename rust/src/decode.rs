@@ -1,6 +1,5 @@
 use crate::types::*;
 
-#[inline]
 fn decode_value(encoded: &mut EncodedStream) -> i32 {
     let mut result = 1;
     let mut shift = 0;
@@ -13,10 +12,13 @@ fn decode_value(encoded: &mut EncodedStream) -> i32 {
             break;
         }
     }
-    return if result & 1 != 0 { !(result >> 1) } else { result >> 1 };
+    if result & 1 != 0 {
+        !(result >> 1)
+    } else {
+        result >> 1
+    }
 }
 
-#[inline]
 pub fn decode_line(encoded: &mut EncodedStream, factor: f64, path: &mut Path) {
     let mut coord = LatLng { lat: 0, lng: 0 };
 
@@ -64,9 +66,18 @@ mod tests {
         let mut path = Path::new(points.as_mut_ptr(), 0);
 
         let expected = [
-            LatLng { lat: 38.5, lng: -120.2 },
-            LatLng { lat: 40.7, lng: -120.95 },
-            LatLng { lat: 43.252, lng: -126.453 },
+            LatLng {
+                lat: 38.5,
+                lng: -120.2,
+            },
+            LatLng {
+                lat: 40.7,
+                lng: -120.95,
+            },
+            LatLng {
+                lat: 43.252,
+                lng: -126.453,
+            },
         ];
 
         decode_line(&mut encoded, 1e5, &mut path);

@@ -12,16 +12,16 @@ pub struct EncodedStream {
 
 impl EncodedStream {
     pub fn new(p: *mut u8, len: usize) -> Self {
-        EncodedStream { p: p, index: 0, len: len }
+        EncodedStream { p, index: 0, len }
     }
 
     pub fn get(&mut self) -> u8 {
         let res = unsafe { *self.p.add(self.index) };
         self.index += 1;
-        return res;
+        res
     }
 
-    pub fn is_empty(&mut self) -> bool {
+    pub fn is_empty(&self) -> bool {
         self.index >= self.len
     }
 }
@@ -33,7 +33,7 @@ pub struct Path {
 
 impl Path {
     pub fn new(p: *mut LatLng<f64>, len: usize) -> Self {
-        Path { p: p, len: len }
+        Path { p, len }
     }
 
     pub fn push(&mut self, item: &mut LatLng<f64>) {
@@ -43,7 +43,7 @@ impl Path {
         self.len += 1;
     }
 
-    pub fn len(&mut self) -> usize {
+    pub fn len(&self) -> usize {
         self.len
     }
 }
