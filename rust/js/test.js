@@ -1,4 +1,4 @@
-const {NodeJSPolylineDecoder} = require("./NodeJSPolylineDecoder");
+import {NodeJSPolylineDecoder} from "./NodeJSPolylineDecoder.js";
 
 const decode = (str, factor) => {return new NodeJSPolylineDecoder().decode(str, factor)};
 

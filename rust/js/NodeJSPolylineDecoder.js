@@ -1,6 +1,7 @@
-const fs = require('fs');
-const {WasmPolylineDecoder} = require('./WasmPolylineDecoder');
-const filename = `${__dirname}/../target/wasm32-unknown-unknown/release/rust.wasm`
+import * as fs from "node:fs";
+import {WasmPolylineDecoder} from "./WasmPolylineDecoder.js";
+
+const filename = `target/wasm32-unknown-unknown/release/rust.wasm`
 
 class NodeJSPolylineDecoder {
     constructor(memory) {
@@ -13,4 +14,4 @@ class NodeJSPolylineDecoder {
     }
 }
 
-module.exports = {NodeJSPolylineDecoder}
+export {NodeJSPolylineDecoder}

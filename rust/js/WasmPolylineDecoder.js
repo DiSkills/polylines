@@ -29,4 +29,4 @@ class WasmPolylineDecoder {
     }
 }
 
-module.exports = {WasmPolylineDecoder};
+export {WasmPolylineDecoder};
